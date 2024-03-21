@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\bin\Debug\net6.0-windows\Pratice App for Mum.exe
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\bin\Debug\net6.0-windows\Pratice App for Mum.deps.json
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\bin\Debug\net6.0-windows\Pratice App for Mum.runtimeconfig.json
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\bin\Debug\net6.0-windows\Pratice App for Mum.dll
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\bin\Debug\net6.0-windows\Pratice App for Mum.pdb
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice_App_for_Mum.Form1.resources
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.dll
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\refint\Pratice App for Mum.dll
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.pdb
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice App for Mum.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\ref\Pratice App for Mum.dll
