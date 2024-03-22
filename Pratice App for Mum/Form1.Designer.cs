@@ -72,12 +72,28 @@
             button4 = new Button();
             Console1 = new TextBox();
             label21 = new Label();
+            richTextBox16 = new RichTextBox();
+            label22 = new Label();
+            richTextBox17 = new RichTextBox();
+            label23 = new Label();
+            richTextBox18 = new RichTextBox();
+            label24 = new Label();
+            richTextBox15 = new RichTextBox();
+            button5 = new Button();
+            label26 = new Label();
+            label27 = new Label();
+            label28 = new Label();
+            richTextBox19 = new RichTextBox();
+            richTextBox20 = new RichTextBox();
+            richTextBox21 = new RichTextBox();
+            comboBox5 = new ComboBox();
+            label25 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(89, 45);
+            label1.Location = new Point(59, 193);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new Size(100, 30);
@@ -88,7 +104,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(249, 45);
+            label2.Location = new Point(44, 316);
             label2.Name = "label2";
             label2.Size = new Size(145, 30);
             label2.TabIndex = 1;
@@ -98,7 +114,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(416, 45);
+            label3.Location = new Point(12, 426);
             label3.Name = "label3";
             label3.Size = new Size(188, 30);
             label3.TabIndex = 2;
@@ -109,7 +125,7 @@
             richTextBox4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBox4.Location = new Point(535, 166);
             richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(327, 586);
+            richTextBox4.Size = new Size(327, 737);
             richTextBox4.TabIndex = 6;
             richTextBox4.Text = "";
             richTextBox4.TextChanged += richTextBox4_TextChanged;
@@ -170,9 +186,9 @@
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(550, 378);
             label9.Name = "label9";
-            label9.Size = new Size(113, 21);
+            label9.Size = new Size(76, 21);
             label9.TabIndex = 16;
-            label9.Text = "Geburtsdatum:";
+            label9.Text = "Birthdate:";
             // 
             // richTextBox5
             // 
@@ -208,7 +224,7 @@
             // 
             comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(61, 78);
+            comboBox1.Location = new Point(27, 226);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(162, 29);
             comboBox1.TabIndex = 21;
@@ -218,9 +234,9 @@
             // 
             comboBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(249, 78);
+            comboBox2.Location = new Point(27, 349);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(138, 29);
+            comboBox2.Size = new Size(162, 29);
             comboBox2.TabIndex = 22;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
@@ -286,7 +302,7 @@
             // 
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "client 1", "client 2", "client 3" });
-            comboBox3.Location = new Point(628, 617);
+            comboBox3.Location = new Point(550, 604);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(121, 38);
             comboBox3.TabIndex = 29;
@@ -296,7 +312,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(620, 589);
+            label13.Location = new Point(550, 565);
             label13.Name = "label13";
             label13.Size = new Size(138, 25);
             label13.TabIndex = 30;
@@ -304,7 +320,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(692, 700);
+            button2.Location = new Point(691, 845);
             button2.Name = "button2";
             button2.Size = new Size(156, 38);
             button2.TabIndex = 32;
@@ -316,7 +332,7 @@
             // 
             richTextBox9.Location = new Point(868, 167);
             richTextBox9.Name = "richTextBox9";
-            richTextBox9.Size = new Size(326, 361);
+            richTextBox9.Size = new Size(386, 543);
             richTextBox9.TabIndex = 33;
             richTextBox9.Text = "";
             richTextBox9.TextChanged += richTextBox9_TextChanged;
@@ -357,7 +373,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(997, 299);
+            label17.Location = new Point(997, 288);
             label17.Name = "label17";
             label17.Size = new Size(88, 25);
             label17.TabIndex = 37;
@@ -384,7 +400,7 @@
             // 
             // richTextBox12
             // 
-            richTextBox12.Location = new Point(879, 362);
+            richTextBox12.Location = new Point(879, 329);
             richTextBox12.Name = "richTextBox12";
             richTextBox12.Size = new Size(298, 33);
             richTextBox12.TabIndex = 40;
@@ -393,7 +409,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1009, 417);
+            button1.Location = new Point(1009, 598);
             button1.Name = "button1";
             button1.Size = new Size(185, 42);
             button1.TabIndex = 41;
@@ -405,15 +421,15 @@
             // 
             comboBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(416, 78);
+            comboBox4.Location = new Point(27, 459);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(189, 29);
+            comboBox4.Size = new Size(162, 29);
             comboBox4.TabIndex = 42;
             comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
             // 
             // button3
             // 
-            button3.Location = new Point(1009, 465);
+            button3.Location = new Point(1009, 646);
             button3.Name = "button3";
             button3.Size = new Size(185, 42);
             button3.TabIndex = 43;
@@ -423,9 +439,9 @@
             // 
             // richTextBox3
             // 
-            richTextBox3.Location = new Point(249, 166);
+            richTextBox3.Location = new Point(215, 166);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(280, 362);
+            richTextBox3.Size = new Size(314, 442);
             richTextBox3.TabIndex = 44;
             richTextBox3.Text = "";
             richTextBox3.TextChanged += richTextBox3_TextChanged;
@@ -480,7 +496,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(321, 352);
+            button4.Location = new Point(321, 547);
             button4.Name = "button4";
             button4.Size = new Size(197, 43);
             button4.TabIndex = 50;
@@ -491,7 +507,7 @@
             // Console1
             // 
             Console1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            Console1.Location = new Point(868, 71);
+            Console1.Location = new Point(790, 71);
             Console1.Name = "Console1";
             Console1.Size = new Size(326, 29);
             Console1.TabIndex = 51;
@@ -500,17 +516,188 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(923, 38);
+            label21.Location = new Point(868, 38);
             label21.Name = "label21";
             label21.Size = new Size(193, 30);
             label21.TabIndex = 52;
             label21.Text = "Alternative Console";
             // 
+            // richTextBox16
+            // 
+            richTextBox16.Location = new Point(550, 691);
+            richTextBox16.Name = "richTextBox16";
+            richTextBox16.Size = new Size(297, 133);
+            richTextBox16.TabIndex = 54;
+            richTextBox16.Text = "";
+            richTextBox16.TextChanged += richTextBox16_TextChanged;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(548, 658);
+            label22.Name = "label22";
+            label22.Size = new Size(162, 30);
+            label22.TabIndex = 55;
+            label22.Text = "Notes (optional)";
+            // 
+            // richTextBox17
+            // 
+            richTextBox17.Location = new Point(880, 431);
+            richTextBox17.Name = "richTextBox17";
+            richTextBox17.Size = new Size(297, 133);
+            richTextBox17.TabIndex = 56;
+            richTextBox17.Text = "";
+            richTextBox17.TextChanged += richTextBox17_TextChanged;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(880, 398);
+            label23.Name = "label23";
+            label23.Size = new Size(68, 30);
+            label23.TabIndex = 57;
+            label23.Text = "Notes";
+            // 
+            // richTextBox18
+            // 
+            richTextBox18.Location = new Point(221, 378);
+            richTextBox18.Name = "richTextBox18";
+            richTextBox18.Size = new Size(297, 133);
+            richTextBox18.TabIndex = 58;
+            richTextBox18.Text = "";
+            richTextBox18.TextChanged += richTextBox18_TextChanged;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(221, 345);
+            label24.Name = "label24";
+            label24.Size = new Size(68, 30);
+            label24.TabIndex = 59;
+            label24.Text = "Notes";
+            // 
+            // richTextBox15
+            // 
+            richTextBox15.Location = new Point(1137, 78);
+            richTextBox15.Name = "richTextBox15";
+            richTextBox15.Size = new Size(262, 100);
+            richTextBox15.TabIndex = 60;
+            richTextBox15.Text = "";
+            richTextBox15.TextChanged += richTextBox15_TextChanged;
+            // 
+            // button5
+            // 
+            button5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.Location = new Point(1183, 184);
+            button5.Name = "button5";
+            button5.Size = new Size(58, 33);
+            button5.TabIndex = 61;
+            button5.Text = "Info";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Location = new Point(1143, 81);
+            label26.Name = "label26";
+            label26.Size = new Size(51, 21);
+            label26.TabIndex = 63;
+            label26.Text = "Email:";
+            label26.Click += label26_Click;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(1143, 113);
+            label27.Name = "label27";
+            label27.Size = new Size(53, 21);
+            label27.TabIndex = 64;
+            label27.Text = "Mobil:";
+            label27.Click += label27_Click;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Location = new Point(1143, 142);
+            label28.Name = "label28";
+            label28.Size = new Size(76, 21);
+            label28.TabIndex = 65;
+            label28.Text = "Birthdate:";
+            label28.Click += label28_Click;
+            // 
+            // richTextBox19
+            // 
+            richTextBox19.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox19.Location = new Point(1202, 85);
+            richTextBox19.Name = "richTextBox19";
+            richTextBox19.Size = new Size(197, 22);
+            richTextBox19.TabIndex = 66;
+            richTextBox19.Text = "";
+            richTextBox19.TextChanged += richTextBox19_TextChanged;
+            // 
+            // richTextBox20
+            // 
+            richTextBox20.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox20.Location = new Point(1202, 113);
+            richTextBox20.Name = "richTextBox20";
+            richTextBox20.Size = new Size(197, 22);
+            richTextBox20.TabIndex = 67;
+            richTextBox20.Text = "";
+            richTextBox20.TextChanged += richTextBox20_TextChanged;
+            // 
+            // richTextBox21
+            // 
+            richTextBox21.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            richTextBox21.Location = new Point(1225, 141);
+            richTextBox21.Name = "richTextBox21";
+            richTextBox21.Size = new Size(174, 22);
+            richTextBox21.TabIndex = 68;
+            richTextBox21.Text = "";
+            richTextBox21.TextChanged += richTextBox21_TextChanged;
+            // 
+            // comboBox5
+            // 
+            comboBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(27, 113);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(162, 29);
+            comboBox5.TabIndex = 69;
+            comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(59, 81);
+            label25.Name = "label25";
+            label25.Size = new Size(0, 30);
+            label25.TabIndex = 70;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1422, 830);
+            ClientSize = new Size(1422, 961);
+            Controls.Add(label25);
+            Controls.Add(comboBox5);
+            Controls.Add(richTextBox21);
+            Controls.Add(richTextBox20);
+            Controls.Add(richTextBox19);
+            Controls.Add(label28);
+            Controls.Add(label27);
+            Controls.Add(label26);
+            Controls.Add(button5);
+            Controls.Add(richTextBox15);
+            Controls.Add(label24);
+            Controls.Add(richTextBox18);
+            Controls.Add(label23);
+            Controls.Add(richTextBox17);
+            Controls.Add(label22);
+            Controls.Add(richTextBox16);
             Controls.Add(label21);
             Controls.Add(Console1);
             Controls.Add(button4);
@@ -609,5 +796,21 @@
         private Button button4;
         private TextBox Console1;
         private Label label21;
+        private RichTextBox richTextBox16;
+        private Label label22;
+        private RichTextBox richTextBox17;
+        private Label label23;
+        private RichTextBox richTextBox18;
+        private Label label24;
+        private RichTextBox richTextBox15;
+        private Button button5;
+        private Label label26;
+        private Label label27;
+        private Label label28;
+        private RichTextBox richTextBox19;
+        private RichTextBox richTextBox20;
+        private RichTextBox richTextBox21;
+        private ComboBox comboBox5;
+        private Label label25;
     }
 }

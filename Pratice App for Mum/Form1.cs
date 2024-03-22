@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Web;
+using System;
+using System.Windows.Forms;
 
 namespace Pratice_App_for_Mum
 {
@@ -12,6 +14,8 @@ namespace Pratice_App_for_Mum
             public int Mobil { get; set; }
             public string Email { get; set; }
             public string BirthDate { get; set; }
+            public string Notes { get; set; }
+            public string WorkersPlace { get; set; }
         }
 
         public class EAinWork
@@ -23,6 +27,7 @@ namespace Pratice_App_for_Mum
             public string EmailInWork { get; set; }
             public int MobilInWork { get; set; }
             public string BirthdateInWork { get; set; }
+            public string WorkNotes { get; set; }
 
         }
 
@@ -32,8 +37,11 @@ namespace Pratice_App_for_Mum
             public string NameOfPausedClient { get; set; }
             public string PausedEndDate { get; set; }
             public string PausedStartDate { get; set; }
+            public string PausedNotes { get; set; }
+            public string PausedEmail { get; set; }
+            public int PausedMobil { get; set; }
+            public string PausedBirthDate { get; set; }
         }
-
 
         private List<PersonalInfos> personalInfos;
 
@@ -41,25 +49,46 @@ namespace Pratice_App_for_Mum
 
         private List<EAMissionPaused> eAMissionPaused = new List<EAMissionPaused>();
 
-        //Btw, EA just means "Ehren Amtlicher" translates to "volunteer" I think, so just a worker
+        //Help Variables
+
+        private bool button5Clicked = false;
+
 
         public Form1()
         {
             InitializeComponent();
 
+            Console1.Text = "startet";
+
             personalInfos = new List<PersonalInfos>();
             eaInWork = new List<EAinWork>();
 
-            personalInfos.Add(new PersonalInfos { Name = "John Johnson ", Mobil = 01737400374, Email = "johnson89@gmail.com", BirthDate = "05.09.1985 (30 jahre)" });
-            personalInfos.Add(new PersonalInfos { Name = "Peter ", Mobil = 7348939, Email = "peterparker89@gmail.com", BirthDate = "03.06.2000" });
-            personalInfos.Add(new PersonalInfos { Name = "Monke123", Mobil = 02434374, Email = "monke89@gmail.com", BirthDate = "02.06.2010" });
-
+            personalInfos.Add(new PersonalInfos { Name = "John", Mobil = 01737400374, Email = "johnson89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Town1" });
+            personalInfos.Add(new PersonalInfos { Name = "Peter ", Mobil = 7348939, Email = "peterparker89@gmail.com", BirthDate = "03.06.2000(24 Jahre)", WorkersPlace = "Town2" });
+            personalInfos.Add(new PersonalInfos { Name = "Paul", Mobil = 02434374, Email = "paul89@gmail.com", BirthDate = "02.06.2010(14 Jahre)", WorkersPlace = "Town3" });
+            personalInfos.Add(new PersonalInfos { Name = "Max", Mobil = 01737400374, Email = "max89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Towm1" });
+            personalInfos.Add(new PersonalInfos { Name = "Paul", Mobil = 01737400374, Email = "paul89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Town2" });
+            personalInfos.Add(new PersonalInfos { Name = "Ina", Mobil = 01737400374, Email = "ina89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Town3" });
 
 
             foreach (PersonalInfos infosInCombobox in personalInfos)
             {
                 comboBox1.Items.Add(infosInCombobox.Name);
             }
+
+            foreach(PersonalInfos workersPlaceInfos in personalInfos)
+            {
+                comboBox5.Items.Add(workersPlaceInfos.WorkersPlace);
+            }
+
+            richTextBox15.Visible = false;
+            richTextBox19.Visible = false;
+            richTextBox20.Visible = false;
+            richTextBox21.Visible = false;
+
+            label26.Visible = false;
+            label27.Visible = false;
+            label28.Visible = false;
         }
 
         //EA Ready
@@ -77,7 +106,6 @@ namespace Pratice_App_for_Mum
                 richTextBox7.Text = findInfosOfSelectedEA.Mobil.ToString();
                 richTextBox1.Text = findInfosOfSelectedEA.BirthDate;
             }
-
         }
 
 
@@ -98,7 +126,7 @@ namespace Pratice_App_for_Mum
 
                 PersonalInfos otherInfos = personalInfos.Find(pInfo => pInfo.Name == selectedEAname);
 
-                eaInWork.Add(new EAinWork { NameOfEA = otherInfos.Name, StartDate = richTextBox2.Text, EndDate = richTextBox8.Text, NameOfClient = comboBox3.SelectedItem.ToString(), BirthdateInWork = otherInfos.BirthDate, EmailInWork = otherInfos.Email, MobilInWork = otherInfos.Mobil });
+                eaInWork.Add(new EAinWork { NameOfEA = otherInfos.Name, StartDate = richTextBox2.Text, EndDate = richTextBox8.Text, NameOfClient = comboBox3.SelectedItem.ToString(), BirthdateInWork = otherInfos.BirthDate, EmailInWork = otherInfos.Email, MobilInWork = otherInfos.Mobil, WorkNotes = richTextBox16.Text });
 
                 personalInfos.Remove(otherInfos);
                 comboBox1.Items.Remove(otherInfos.Name);
@@ -109,14 +137,13 @@ namespace Pratice_App_for_Mum
                 richTextBox7.Clear();
                 richTextBox6.Clear();
                 richTextBox5.Clear();
+                richTextBox16.Clear();
                 comboBox3.SelectedIndex = -1;
                 comboBox1.Text = "Bitte ausfüllen";
 
             }
 
         }
-
-
 
         //Timeframe 
         private void richTextBox12_TextChanged(object sender, EventArgs e)
@@ -139,7 +166,7 @@ namespace Pratice_App_for_Mum
 
                 if (eAinWorkToRemove != null)
                 {
-                    eAMissionPaused.Add(new EAMissionPaused { NameOfMissionPausedEA = eAinWorkToRemove.NameOfEA, NameOfPausedClient = eAinWorkToRemove.NameOfClient, PausedStartDate = eAinWorkToRemove.StartDate, PausedEndDate = eAinWorkToRemove.EndDate });
+                    eAMissionPaused.Add(new EAMissionPaused { NameOfMissionPausedEA = eAinWorkToRemove.NameOfEA, NameOfPausedClient = eAinWorkToRemove.NameOfClient, PausedStartDate = eAinWorkToRemove.StartDate, PausedEndDate = eAinWorkToRemove.EndDate, PausedNotes = eAinWorkToRemove.WorkNotes, PausedBirthDate = eAinWorkToRemove.BirthdateInWork, PausedEmail = eAinWorkToRemove.EmailInWork, PausedMobil = eAinWorkToRemove.MobilInWork });
 
                     eaInWork.Remove(eAinWorkToRemove);
 
@@ -148,6 +175,7 @@ namespace Pratice_App_for_Mum
                     richTextBox10.Clear();
                     richTextBox11.Clear();
                     richTextBox12.Clear();
+                    richTextBox17.Clear();
                     comboBox2.Text = "Nichts ausgewählt"; //"not selected"
                 }
             }
@@ -171,11 +199,12 @@ namespace Pratice_App_for_Mum
                     richTextBox10.Text = eAinWork.NameOfEA;
                     richTextBox11.Text = eAinWork.NameOfClient;
                     richTextBox12.Text = eAinWork.StartDate + "    -    " + eAinWork.EndDate;
+                    richTextBox17.Text = eAinWork.WorkNotes;
 
                 }
             }
         }
-       
+
 
         //Continue Mission Button
         private void button4_Click(object sender, EventArgs e)
@@ -190,12 +219,14 @@ namespace Pratice_App_for_Mum
 
                 if (searchEAMissionPaused != null)
                 {
-                    eaInWork.Add(new EAinWork { NameOfEA = searchEAMissionPaused.NameOfMissionPausedEA, NameOfClient = searchEAMissionPaused.NameOfPausedClient, EndDate = searchEAMissionPaused.PausedEndDate, StartDate = searchEAMissionPaused.PausedStartDate });
+                    eaInWork.Add(new EAinWork { NameOfEA = searchEAMissionPaused.NameOfMissionPausedEA, NameOfClient = searchEAMissionPaused.NameOfPausedClient, EndDate = searchEAMissionPaused.PausedEndDate, StartDate = searchEAMissionPaused.PausedStartDate, WorkNotes = searchEAMissionPaused.PausedNotes, EmailInWork = searchEAMissionPaused.PausedEmail, MobilInWork = searchEAMissionPaused.PausedMobil, BirthdateInWork = searchEAMissionPaused.PausedBirthDate });
 
                     comboBox2.Items.Add(searchEAMissionPaused.NameOfMissionPausedEA);
                     comboBox4.Items.Remove(searchEAMissionPaused.NameOfMissionPausedEA);
                     richTextBox13.Clear();
                     richTextBox14.Clear();
+                    richTextBox17.Clear();
+                    richTextBox18.Clear();
                     comboBox4.Text = "Nicht ausgewählt"; //"not selected"
 
                     eAMissionPaused.Remove(searchEAMissionPaused);
@@ -214,18 +245,70 @@ namespace Pratice_App_for_Mum
 
                 if (searchEAMissionPaused != null)
                 {
-                    personalInfos.Add(new PersonalInfos { Name = searchEAMissionPaused.NameOfEA, Email = searchEAMissionPaused.EmailInWork, BirthDate = searchEAMissionPaused.BirthdateInWork, Mobil = searchEAMissionPaused.MobilInWork });
+                    personalInfos.Add(new PersonalInfos { Name = searchEAMissionPaused.NameOfEA, Email = searchEAMissionPaused.EmailInWork, BirthDate = searchEAMissionPaused.BirthdateInWork, Mobil = searchEAMissionPaused.MobilInWork, Notes = searchEAMissionPaused.WorkNotes });
 
                     comboBox1.Items.Add(searchEAMissionPaused.NameOfEA);
                     comboBox2.Items.Remove(searchEAMissionPaused.NameOfEA);
                     richTextBox10.Clear();
                     richTextBox11.Clear();
                     richTextBox12.Clear();
+                    richTextBox17.Clear();
 
                     comboBox2.Text = "Nicht ausgewählt";
                     eaInWork.Remove(searchEAMissionPaused);
                 }
             }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!button5Clicked)
+            {
+
+                EAinWork searchEAMissionPaused = eaInWork.Find(em => em.NameOfEA == comboBox2.SelectedItem.ToString());
+
+                richTextBox15.Visible = true;
+                richTextBox19.Visible = true;
+                richTextBox20.Visible = true;
+                richTextBox21.Visible = true;
+
+                label26.Visible = true;
+                label27.Visible = true;
+                label28.Visible = true;
+
+
+                if (comboBox2.SelectedIndex != -1)
+                {
+                    richTextBox19.Text = searchEAMissionPaused.EmailInWork;
+                    richTextBox20.Text = searchEAMissionPaused.MobilInWork.ToString();
+                    richTextBox21.Text = searchEAMissionPaused.BirthdateInWork;
+                }
+                else
+                    Console1.Text = "Missing Index";
+
+                button5Clicked = true;
+            }
+            else
+            {
+                SetInfoElementsFalse();
+                button5Clicked = false;
+            }
+
+        }
+
+        private void SetInfoElementsFalse()
+        {
+            richTextBox15.Visible = false;
+            richTextBox19.Visible = false;
+            richTextBox20.Visible = false;
+            richTextBox21.Visible = false;
+
+            label26.Visible = false;
+            label27.Visible = false;
+            label28.Visible = false;
+        }
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //EA paused combobox
@@ -237,6 +320,7 @@ namespace Pratice_App_for_Mum
             {
                 richTextBox13.Text = findName.NameOfMissionPausedEA;
                 richTextBox14.Text = findName.NameOfPausedClient;
+                richTextBox18.Text = findName.PausedNotes;
             }
         }
 
@@ -396,5 +480,56 @@ namespace Pratice_App_for_Mum
         {
 
         }
+
+        private void richTextBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox20_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox21_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
