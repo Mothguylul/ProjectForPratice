@@ -116,11 +116,6 @@ namespace Pratice_App_for_Mum
             }
         }
 
-        // Timeframe
-        private void RichTextBox12_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         // Pause Mission Button
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -281,6 +276,10 @@ namespace Pratice_App_for_Mum
         {
         }
 
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
         // EA paused combobox
         private void ComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -297,20 +296,6 @@ namespace Pratice_App_for_Mum
                 richTextBox14.Text = findName.NameOfPausedClient;
                 richTextBox18.Text = findName.PausedNotes;
             }
-        }
-
-        // Client Name
-        private void RichTextBox11_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        // EA Name
-        private void RichTextBox10_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
         }
     }
 }
