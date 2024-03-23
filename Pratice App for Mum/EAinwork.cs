@@ -1,9 +1,4 @@
-﻿// <copyright file="EAinwork.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
-#pragma warning disable SA1600 // ElementsMustBeDocumented
-namespace Pratice_App_for_Mum
+﻿namespace Pratice_App_for_Mum
 {
     using System;
     using System.Collections.Generic;

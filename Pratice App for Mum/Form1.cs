@@ -1,12 +1,5 @@
-// <copyright file="Form1.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
+namespace Pratice_App_for_Mum;
 
-#pragma warning disable SA1600 // ElementsMustBeDocumented
-#pragma warning disable SA1101 // PrefixLocalCallsWithThis
-
-namespace Pratice_App_for_Mum
-{
     using System;
     using System.Diagnostics;
     using System.Drawing.Text;
@@ -14,9 +7,7 @@ namespace Pratice_App_for_Mum
     using System.Web;
     using System.Windows.Forms;
 
-#pragma warning disable SA1601 // Partial elements should be documented
     public partial class Form1 : Form
-#pragma warning restore SA1601 // Partial elements should be documented
     {
         private List<PersonalInfos> personalInfos;
 
@@ -298,4 +289,3 @@ namespace Pratice_App_for_Mum
             }
         }
     }
-}
