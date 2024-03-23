@@ -6,11 +6,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class PersonalInfos
+    public class Worker
     {
         public string Name { get; set; } = string.Empty;
-
-        public int Mobil { get; set; }
 
         public string Email { get; set; } = string.Empty;
 
@@ -18,6 +16,10 @@
 
         public string Notes { get; set; } = string.Empty;
 
-        public string WorkersPlace { get; set; } = string.Empty;
+        public int Mobil { get; set; }
+
+        public int TownID { get; set; }
+
+        public int WorkerID { get; set; }
     }
 }

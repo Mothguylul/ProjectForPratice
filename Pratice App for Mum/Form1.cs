@@ -9,7 +9,7 @@ namespace Pratice_App_for_Mum;
 
     public partial class Form1 : Form
     {
-        private List<PersonalInfos> personalInfos;
+        private List<Worker> personalInfos;
 
         private List<EAinWork> eaInWork = new List<EAinWork>();
 
@@ -24,24 +24,24 @@ namespace Pratice_App_for_Mum;
 
             Console1.Text = "startet";
 
-            personalInfos = new List<PersonalInfos>();
+            personalInfos = new List<Worker>();
             eaInWork = new List<EAinWork>();
 
-            personalInfos.Add(new PersonalInfos { Name = "John", Mobil = 01737400374, Email = "johnson89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Town1" });
-            personalInfos.Add(new PersonalInfos { Name = "Peter ", Mobil = 7348939, Email = "peterparker89@gmail.com", BirthDate = "03.06.2000(24 Jahre)", WorkersPlace = "Town2" });
-            personalInfos.Add(new PersonalInfos { Name = "Paul", Mobil = 02434374, Email = "paul89@gmail.com", BirthDate = "02.06.2010(14 Jahre)", WorkersPlace = "Town3" });
-            personalInfos.Add(new PersonalInfos { Name = "Max", Mobil = 01737400374, Email = "max89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Towm1" });
-            personalInfos.Add(new PersonalInfos { Name = "Paul", Mobil = 01737400374, Email = "paul89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Town2" });
-            personalInfos.Add(new PersonalInfos { Name = "Ina", Mobil = 01737400374, Email = "ina89@gmail.com", BirthDate = "05.09.1985 (30 jahre)", WorkersPlace = "Town3" });
+            personalInfos.Add(new Worker { Name = "John", Mobil = 01737400374, Email = "johnson89@gmail.com", BirthDate = "05.09.1985 (30 jahre)" });
+            personalInfos.Add(new Worker { Name = "Peter ", Mobil = 7348939, Email = "peterparker89@gmail.com", BirthDate = "03.06.2000(24 Jahre)" });
+            personalInfos.Add(new Worker { Name = "Paul", Mobil = 02434374, Email = "paul89@gmail.com", BirthDate = "02.06.2010(14 Jahre)" });
+            personalInfos.Add(new Worker { Name = "Max", Mobil = 01737400374, Email = "max89@gmail.com", BirthDate = "05.09.1985 (30 jahre)" });
+            personalInfos.Add(new Worker { Name = "Paul", Mobil = 01737400374, Email = "paul89@gmail.com", BirthDate = "05.09.1985 (30 jahre)" });
+            personalInfos.Add(new Worker { Name = "Ina", Mobil = 01737400374, Email = "ina89@gmail.com", BirthDate = "05.09.1985 (30 jahre)" });
 
-            foreach (PersonalInfos infosInCombobox in personalInfos)
+            foreach (Worker infosInCombobox in personalInfos)
             {
                 comboBox1.Items.Add(infosInCombobox.Name);
             }
 
-            foreach (PersonalInfos workersPlaceInfos in personalInfos)
+            foreach (Worker workersPlaceInfos in personalInfos)
             {
-                comboBox5.Items.Add(workersPlaceInfos.WorkersPlace);
+                comboBox5.Items.Add(workersPlaceInfos.TownID);
             }
 
             richTextBox15.Visible = false;
@@ -59,7 +59,7 @@ namespace Pratice_App_for_Mum;
         {
             string selectedCustomer = (string)comboBox1.SelectedItem;
 
-            PersonalInfos? findInfosOfSelectedEA = personalInfos.Find(pInfo => pInfo.Name == selectedCustomer);
+            Worker? findInfosOfSelectedEA = personalInfos.Find(pInfo => pInfo.Name == selectedCustomer);
 
             if (findInfosOfSelectedEA != null)
             {
@@ -83,7 +83,7 @@ namespace Pratice_App_for_Mum;
 
                 comboBox2.Items.Add(finalEA);
 
-                PersonalInfos? otherInfos = personalInfos.Find(pInfo => pInfo.Name == selectedEAname);
+                Worker? otherInfos = personalInfos.Find(pInfo => pInfo.Name == selectedEAname);
 
                 if (otherInfos == null)
                 {
@@ -196,7 +196,7 @@ namespace Pratice_App_for_Mum;
 
                 if (searchEAMissionPaused != null)
                 {
-                    personalInfos.Add(new PersonalInfos { Name = searchEAMissionPaused.NameOfEA, Email = searchEAMissionPaused.EmailInWork, BirthDate = searchEAMissionPaused.BirthdateInWork, Mobil = searchEAMissionPaused.MobilInWork, Notes = searchEAMissionPaused.WorkNotes });
+                    personalInfos.Add(new Worker { Name = searchEAMissionPaused.NameOfEA, Email = searchEAMissionPaused.EmailInWork, BirthDate = searchEAMissionPaused.BirthdateInWork, Mobil = searchEAMissionPaused.MobilInWork, Notes = searchEAMissionPaused.WorkNotes });
 
                     comboBox1.Items.Add(searchEAMissionPaused.NameOfEA);
                     comboBox2.Items.Remove(searchEAMissionPaused.NameOfEA);
