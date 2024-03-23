@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OwBNJLEiPGv7oJ1fDzr5ot0TRbdZg8H5z3ENfJO2hCJoZBSj+btFEHkbxlQN3NN10JXoRIAj2GG/D2tgXjf76A==",
+  "dgSpecHash": "PoMyHhlWo26JGjHejesD/9lg9efuwDBw41II+Yt271CKxvis46m09UtGDT3B1XOjffS4DbwJbrmitzWMcwHnug==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\source\\repos\\Pratice App for Mum\\Pratice App for Mum\\Pratice App for Mum.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
   "logs": []
 }

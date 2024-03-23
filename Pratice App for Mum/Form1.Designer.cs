@@ -99,7 +99,6 @@
             label1.Size = new Size(100, 30);
             label1.TabIndex = 0;
             label1.Text = "EA Ready";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -109,7 +108,6 @@
             label2.Size = new Size(145, 30);
             label2.TabIndex = 1;
             label2.Text = "EA on Mission";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -128,7 +126,6 @@
             richTextBox4.Size = new Size(327, 737);
             richTextBox4.TabIndex = 6;
             richTextBox4.Text = "";
-            richTextBox4.TextChanged += richTextBox4_TextChanged;
             // 
             // label4
             // 
@@ -148,7 +145,6 @@
             label5.Size = new Size(55, 21);
             label5.TabIndex = 9;
             label5.Text = "Name:";
-            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -198,7 +194,6 @@
             richTextBox5.Size = new Size(202, 34);
             richTextBox5.TabIndex = 18;
             richTextBox5.Text = "";
-            richTextBox5.TextChanged += richTextBox5_TextChanged;
             // 
             // richTextBox6
             // 
@@ -208,7 +203,6 @@
             richTextBox6.Size = new Size(252, 28);
             richTextBox6.TabIndex = 19;
             richTextBox6.Text = "";
-            richTextBox6.TextChanged += richTextBox6_TextChanged;
             // 
             // richTextBox7
             // 
@@ -218,7 +212,6 @@
             richTextBox7.Size = new Size(206, 27);
             richTextBox7.TabIndex = 20;
             richTextBox7.Text = "";
-            richTextBox7.TextChanged += richTextBox7_TextChanged;
             // 
             // comboBox1
             // 
@@ -228,7 +221,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(162, 29);
             comboBox1.TabIndex = 21;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 
@@ -238,7 +231,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(162, 29);
             comboBox2.TabIndex = 22;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
             // 
             // richTextBox1
             // 
@@ -248,7 +241,6 @@
             richTextBox1.Size = new Size(144, 29);
             richTextBox1.TabIndex = 23;
             richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged_1;
             // 
             // label10
             // 
@@ -267,7 +259,6 @@
             richTextBox2.Size = new Size(178, 35);
             richTextBox2.TabIndex = 25;
             richTextBox2.Text = "";
-            richTextBox2.TextChanged += richTextBox2_TextChanged;
             // 
             // richTextBox8
             // 
@@ -276,7 +267,6 @@
             richTextBox8.Size = new Size(178, 35);
             richTextBox8.TabIndex = 26;
             richTextBox8.Text = "";
-            richTextBox8.TextChanged += richTextBox8_TextChanged;
             // 
             // label11
             // 
@@ -306,7 +296,7 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(121, 38);
             comboBox3.TabIndex = 29;
-            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            comboBox3.SelectedIndexChanged += ComboBox3_SelectedIndexChanged;
             // 
             // label13
             // 
@@ -320,13 +310,13 @@
             // 
             // button2
             // 
-            button2.Location = new Point(691, 845);
+            button2.Location = new Point(691, 845); 
             button2.Name = "button2";
             button2.Size = new Size(156, 38);
             button2.TabIndex = 32;
             button2.Text = "Start Mission";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += Button2_Click;
             // 
             // richTextBox9
             // 
@@ -335,7 +325,6 @@
             richTextBox9.Size = new Size(386, 543);
             richTextBox9.TabIndex = 33;
             richTextBox9.Text = "";
-            richTextBox9.TextChanged += richTextBox9_TextChanged;
             // 
             // label14
             // 
@@ -345,7 +334,6 @@
             label14.Size = new Size(136, 30);
             label14.TabIndex = 34;
             label14.Text = "Mission Infos";
-            label14.Click += label14_Click;
             // 
             // label15
             // 
@@ -356,7 +344,6 @@
             label15.Size = new Size(38, 25);
             label15.TabIndex = 35;
             label15.Text = "EA:";
-            label15.Click += label15_Click;
             // 
             // label16
             // 
@@ -367,7 +354,6 @@
             label16.Size = new Size(65, 25);
             label16.TabIndex = 36;
             label16.Text = "Client:";
-            label16.Click += label16_Click;
             // 
             // label17
             // 
@@ -378,7 +364,6 @@
             label17.Size = new Size(88, 25);
             label17.TabIndex = 37;
             label17.Text = "Zeitraum";
-            label17.Click += label17_Click;
             // 
             // richTextBox10
             // 
@@ -387,7 +372,6 @@
             richTextBox10.Size = new Size(254, 33);
             richTextBox10.TabIndex = 38;
             richTextBox10.Text = "";
-            richTextBox10.TextChanged += richTextBox10_TextChanged;
             // 
             // richTextBox11
             // 
@@ -396,7 +380,6 @@
             richTextBox11.Size = new Size(227, 33);
             richTextBox11.TabIndex = 39;
             richTextBox11.Text = "";
-            richTextBox11.TextChanged += richTextBox11_TextChanged;
             // 
             // richTextBox12
             // 
@@ -405,7 +388,6 @@
             richTextBox12.Size = new Size(298, 33);
             richTextBox12.TabIndex = 40;
             richTextBox12.Text = "";
-            richTextBox12.TextChanged += richTextBox12_TextChanged;
             // 
             // button1
             // 
@@ -415,7 +397,7 @@
             button1.TabIndex = 41;
             button1.Text = "Pause Mission";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += Button1_Click;
             // 
             // comboBox4
             // 
@@ -425,7 +407,7 @@
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(162, 29);
             comboBox4.TabIndex = 42;
-            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
+            comboBox4.SelectedIndexChanged += ComboBox4_SelectedIndexChanged;
             // 
             // button3
             // 
@@ -435,7 +417,7 @@
             button3.TabIndex = 43;
             button3.Text = "End Mission";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button3.Click += Button3_Click;
             // 
             // richTextBox3
             // 
@@ -444,7 +426,6 @@
             richTextBox3.Size = new Size(314, 442);
             richTextBox3.TabIndex = 44;
             richTextBox3.Text = "";
-            richTextBox3.TextChanged += richTextBox3_TextChanged;
             // 
             // label18
             // 
@@ -472,7 +453,6 @@
             richTextBox13.Size = new Size(211, 31);
             richTextBox13.TabIndex = 47;
             richTextBox13.Text = "";
-            richTextBox13.TextChanged += richTextBox13_TextChanged;
             // 
             // label20
             // 
@@ -483,7 +463,6 @@
             label20.Size = new Size(178, 25);
             label20.TabIndex = 48;
             label20.Text = "Accompanied client";
-            label20.Click += label20_Click;
             // 
             // richTextBox14
             // 
@@ -492,7 +471,6 @@
             richTextBox14.Size = new Size(255, 28);
             richTextBox14.TabIndex = 49;
             richTextBox14.Text = "";
-            richTextBox14.TextChanged += richTextBox14_TextChanged;
             // 
             // button4
             // 
@@ -502,7 +480,7 @@
             button4.TabIndex = 50;
             button4.Text = "Continue Mission";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button4.Click += Button4_Click;
             // 
             // Console1
             // 
@@ -511,7 +489,6 @@
             Console1.Name = "Console1";
             Console1.Size = new Size(326, 29);
             Console1.TabIndex = 51;
-            Console1.TextChanged += textBox1_TextChanged_1;
             // 
             // label21
             // 
@@ -529,7 +506,6 @@
             richTextBox16.Size = new Size(297, 133);
             richTextBox16.TabIndex = 54;
             richTextBox16.Text = "";
-            richTextBox16.TextChanged += richTextBox16_TextChanged;
             // 
             // label22
             // 
@@ -547,7 +523,6 @@
             richTextBox17.Size = new Size(297, 133);
             richTextBox17.TabIndex = 56;
             richTextBox17.Text = "";
-            richTextBox17.TextChanged += richTextBox17_TextChanged;
             // 
             // label23
             // 
@@ -565,7 +540,6 @@
             richTextBox18.Size = new Size(297, 133);
             richTextBox18.TabIndex = 58;
             richTextBox18.Text = "";
-            richTextBox18.TextChanged += richTextBox18_TextChanged;
             // 
             // label24
             // 
@@ -583,7 +557,6 @@
             richTextBox15.Size = new Size(262, 100);
             richTextBox15.TabIndex = 60;
             richTextBox15.Text = "";
-            richTextBox15.TextChanged += richTextBox15_TextChanged;
             // 
             // button5
             // 
@@ -594,7 +567,7 @@
             button5.TabIndex = 61;
             button5.Text = "Info";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            button5.Click += Button5_Click;
             // 
             // label26
             // 
@@ -605,7 +578,6 @@
             label26.Size = new Size(51, 21);
             label26.TabIndex = 63;
             label26.Text = "Email:";
-            label26.Click += label26_Click;
             // 
             // label27
             // 
@@ -616,7 +588,6 @@
             label27.Size = new Size(53, 21);
             label27.TabIndex = 64;
             label27.Text = "Mobil:";
-            label27.Click += label27_Click;
             // 
             // label28
             // 
@@ -627,7 +598,6 @@
             label28.Size = new Size(76, 21);
             label28.TabIndex = 65;
             label28.Text = "Birthdate:";
-            label28.Click += label28_Click;
             // 
             // richTextBox19
             // 
@@ -637,7 +607,6 @@
             richTextBox19.Size = new Size(197, 22);
             richTextBox19.TabIndex = 66;
             richTextBox19.Text = "";
-            richTextBox19.TextChanged += richTextBox19_TextChanged;
             // 
             // richTextBox20
             // 
@@ -647,7 +616,6 @@
             richTextBox20.Size = new Size(197, 22);
             richTextBox20.TabIndex = 67;
             richTextBox20.Text = "";
-            richTextBox20.TextChanged += richTextBox20_TextChanged;
             // 
             // richTextBox21
             // 
@@ -657,7 +625,6 @@
             richTextBox21.Size = new Size(174, 22);
             richTextBox21.TabIndex = 68;
             richTextBox21.Text = "";
-            richTextBox21.TextChanged += richTextBox21_TextChanged;
             // 
             // comboBox5
             // 
@@ -667,7 +634,7 @@
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(162, 29);
             comboBox5.TabIndex = 69;
-            comboBox5.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
+            comboBox5.SelectedIndexChanged += ComboBox5_SelectedIndexChanged;
             // 
             // label25
             // 
