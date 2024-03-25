@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    internal class Mission
+    public class Mission
     {
         public int WorkersID { get; set; }
 
@@ -18,5 +18,7 @@
         public string StartDateM { get; set; } = string.Empty;
 
         public string Client { get; set; } = string.Empty;
+
+        public bool Paused { get; set; } = false;
     }
 }

@@ -18,8 +18,8 @@
 
         public int Mobil { get; set; }
 
-        public int TownID { get; set; }
+        public int TownId { get; set; }
 
-        public int WorkerID { get; set; }
+        public int Id { get; set; }
     }
 }

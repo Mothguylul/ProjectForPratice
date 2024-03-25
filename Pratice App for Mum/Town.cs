@@ -6,10 +6,10 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    internal class Town
+    public class Town
     {
-        public int Id { get; set; }
+        public int TownID { get; set; }
 
-        public string NameOfTown { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
     }
 }
