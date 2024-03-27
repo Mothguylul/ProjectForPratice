@@ -20,7 +20,7 @@ public partial class Form1 : Form
     {
         InitializeComponent();
 
-        repository = new Repository();
+        repository = new Database();
 
         foreach (Town town in repository.GetTowns())
         {
@@ -36,12 +36,22 @@ public partial class Form1 : Form
         {
             Town selectedTown = (Town)TownComboBox.SelectedItem;
 
-            var filteredWorkers = repository.GetWorkers().Where(worker => worker.TownId == selectedTown.TownID);
+            var filteredWorkers = repository.GetWorkers().Where(worker => worker.TownId == selectedTown.Id);
 
             foreach (var worker in filteredWorkers)
             {
                 WorkersListBox.Items.Add(worker);
             }
+        }
+    }
+
+    private void RefreshTowns(object? sender, EventArgs e)
+    {
+        TownComboBox.Items.Clear();
+
+        foreach (Town town in repository.GetTowns())
+        {
+            TownComboBox.Items.Add(town);
         }
     }
 
@@ -60,6 +70,31 @@ public partial class Form1 : Form
                 MobilTextBox.Text = selectedWorker.Mobil.ToString();
                 BirthDateTextBox.Text = selectedWorker.BirthDate;
             }
+        }
+    }
+
+    private void CreateTownButton_Click(object sender, EventArgs e)
+    {
+        CreateTown createTown = new CreateTown();
+
+        createTown.FormClosed += RefreshTowns;
+        createTown.Show();
+    }
+
+    private void DeleteTownButton_Click(object sender, EventArgs e)
+    {
+        if (TownComboBox.SelectedIndex != -1)
+        {
+            Town? selectedTown = TownComboBox.SelectedItem as Town;
+
+            if (selectedTown is null)
+            {
+                MessageBox.Show("Select a town to delete first!");
+                return;
+            }
+
+            repository.DeleteTown(selectedTown.Id);
+            TownComboBox.Items.Remove(selectedTown);
         }
     }
 }
