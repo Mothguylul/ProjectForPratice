@@ -147,7 +147,7 @@
             // CreateTownNutton
             // 
             CreateTownNutton.BackColor = SystemColors.ControlDark;
-            CreateTownNutton.Location = new Point(421, 111);
+            CreateTownNutton.Location = new Point(40, 108);
             CreateTownNutton.Name = "CreateTownNutton";
             CreateTownNutton.Size = new Size(103, 41);
             CreateTownNutton.TabIndex = 82;

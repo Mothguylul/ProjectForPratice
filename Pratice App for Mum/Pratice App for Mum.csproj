@@ -8,6 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	  <StartupObject>Pratice_App_for_Mum.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

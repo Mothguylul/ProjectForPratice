@@ -14,8 +14,6 @@
     {
         private readonly string connectionString = "Data Source=C:\\Users\\Admin\\source\\repos\\Pratice App for Mum\\Pratice App for mum\\database.db";
 
-        private Form1 form1 = new Form1();
-
         public IEnumerable<Mission> GetMissions()
         {
             return Enumerable.Empty<Mission>();
