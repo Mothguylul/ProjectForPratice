@@ -7,6 +7,8 @@ using System.Reflection.Metadata.Ecma335;
 using System.Web;
 using System.Windows.Forms;
 using System.Linq;
+using Pratice_App_for_Mum.Database;
+using Pratice_App_for_Mum.Models;
 
 public partial class Form1 : Form
 {
@@ -20,7 +22,7 @@ public partial class Form1 : Form
     {
         InitializeComponent();
 
-        repository = new Database();
+        repository = new Repository();
 
         foreach (Town town in repository.GetTowns())
         {
@@ -57,20 +59,8 @@ public partial class Form1 : Form
 
     private void WorkersListBox_SelectedIndexChanged(object sender, EventArgs e)
     {
-        if (WorkersListBox.SelectedIndex != -1)
-        {
-            int selectedIndex = WorkersListBox.SelectedIndex;
-
-            Worker? selectedWorker = WorkersListBox.Items[selectedIndex] as Worker;
-
-            if (selectedWorker != null)
-            {
-                NameTextBox.Text = selectedWorker.Name;
-                EmailTextBox.Text = selectedWorker.Email;
-                MobilTextBox.Text = selectedWorker.Mobil.ToString();
-                BirthDateTextBox.Text = selectedWorker.BirthDate;
-            }
-        }
+        RefreshAssignmentInfo();
+        RefreshWorkerInfo();
     }
 
     private void CreateTownButton_Click(object sender, EventArgs e)
@@ -96,5 +86,26 @@ public partial class Form1 : Form
             repository.DeleteTown(selectedTown.Id);
             TownComboBox.Items.Remove(selectedTown);
         }
+    }
+
+    private void RefreshAssignmentInfo()
+    {
+        Worker selectedWorker = (Worker)WorkersListBox.SelectedItem;
+
+        Assignment? currentAssignment = repository.GetAssignments().FirstOrDefault(a => a.WorkersId == selectedWorker.Id);
+    }
+
+    private void RefreshWorkerInfo()
+    {
+        Worker? selectedWorker = WorkersListBox.SelectedItem as Worker;
+
+        NameTextBox.Text = selectedWorker is null ? string.Empty : selectedWorker.Name;
+        EmailTextBox.Text = selectedWorker is null ? string.Empty : selectedWorker.Email;
+        MobilTextBox.Text = selectedWorker is null ? string.Empty : selectedWorker.Mobil.ToString();
+        BirthDateTextBox.Text = selectedWorker is null ? string.Empty : selectedWorker.BirthDate;
+    }
+
+    private void NameTextBox_TextChanged(object sender, EventArgs e)
+    {
     }
 }

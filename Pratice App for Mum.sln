@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pratice App for Mum", "Pratice App for Mum\Pratice App for Mum.csproj", "{2A41384A-4CE9-4F43-9219-45D775BA124F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pratice App for Mum", "Pratice App for Mum\Pratice App for Mum.csproj", "{2A41384A-4CE9-4F43-9219-45D775BA124F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,6 +10,7 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using Pratice_App_for_Mum.Database;
 
     public partial class CreateTown : Form
     {
@@ -19,7 +20,7 @@
         {
             InitializeComponent();
 
-            repository = new Database();
+            repository = new Repository();
         }
 
         private void CreateTown_Load(object sender, EventArgs e)

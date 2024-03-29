@@ -12,7 +12,7 @@
 
     public partial class LoginForm : Form
     {
-        private string password = "_password123";
+        private string password = "hello";
 
         public LoginForm()
         {
@@ -21,11 +21,11 @@
 
         private void EnterButton_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-
             if (PasswordTextBox.Text == password)
             {
-                this.Hide();
+                Form1 form1 = new Form1();
+
+                Close();
                 form1.Show();
             }
             else

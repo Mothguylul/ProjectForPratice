@@ -1,10 +1,11 @@
-﻿namespace Pratice_App_for_Mum
+﻿namespace Pratice_App_for_Mum.Database
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using Pratice_App_for_Mum.Models;
 
     public interface IRepository
     {
@@ -12,7 +13,7 @@
 
         IEnumerable<Worker> GetWorkers();
 
-        IEnumerable<Mission> GetMissions();
+        IEnumerable<Assignment> GetAssignments();
 
         bool CreateNewTown(string newTown);
 

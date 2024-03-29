@@ -1,4 +1,4 @@
-﻿namespace Pratice_App_for_Mum
+﻿namespace Pratice_App_for_Mum.Models
 {
     using System;
     using System.Collections.Generic;

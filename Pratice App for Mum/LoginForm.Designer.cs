@@ -36,17 +36,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(145, 20);
+            label1.Font = new Font("Lucida Sans Unicode", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(240, 28);
             label1.Name = "label1";
-            label1.Size = new Size(140, 25);
+            label1.Size = new Size(62, 23);
             label1.TabIndex = 0;
-            label1.Text = "Enter Password";
+            label1.Text = "Login";
             // 
             // EnterButton
             // 
             EnterButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            EnterButton.Location = new Point(275, 87);
+            EnterButton.Location = new Point(410, 241);
             EnterButton.Name = "EnterButton";
             EnterButton.Size = new Size(81, 33);
             EnterButton.TabIndex = 1;
@@ -57,7 +57,7 @@
             // PasswordTextBox
             // 
             PasswordTextBox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            PasswordTextBox.Location = new Point(93, 48);
+            PasswordTextBox.Location = new Point(213, 149);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Size = new Size(263, 33);
             PasswordTextBox.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(416, 151);
+            ClientSize = new Size(554, 286);
             Controls.Add(PasswordTextBox);
             Controls.Add(EnterButton);
             Controls.Add(label1);
