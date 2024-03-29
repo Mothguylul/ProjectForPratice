@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Linq;
 using Pratice_App_for_Mum.Database;
 using Pratice_App_for_Mum.Models;
+using System.Drawing.Design;
 
 public partial class Form1 : Form
 {
@@ -73,26 +74,49 @@ public partial class Form1 : Form
 
     private void DeleteTownButton_Click(object sender, EventArgs e)
     {
-        if (TownComboBox.SelectedIndex != -1)
+        Town? selectedTown = TownComboBox.SelectedItem as Town;
+
+        if (selectedTown is null)
         {
-            Town? selectedTown = TownComboBox.SelectedItem as Town;
-
-            if (selectedTown is null)
-            {
-                MessageBox.Show("Select a town to delete first!");
-                return;
-            }
-
-            repository.DeleteTown(selectedTown.Id);
-            TownComboBox.Items.Remove(selectedTown);
+            MessageBox.Show("Select a town to delete first!");
+            return;
         }
+
+        repository.DeleteTown(selectedTown.Id);
+        TownComboBox.Items.Remove(selectedTown);
     }
 
     private void RefreshAssignmentInfo()
     {
-        Worker selectedWorker = (Worker)WorkersListBox.SelectedItem;
+        Worker? selectedWorker = WorkersListBox.SelectedItem as Worker;
 
-        Assignment? currentAssignment = repository.GetAssignments().FirstOrDefault(a => a.WorkersId == selectedWorker.Id);
+        if (selectedWorker is null)
+        {
+            return;
+        }
+
+        Assignment? currentAssignment = repository.GetAssignments().FirstOrDefault(a => a.WorkerId == selectedWorker.Id);
+
+        NameOfAssignmentWorkertxt.Text = selectedWorker.Name;
+
+        if (currentAssignment is not null)
+        {
+            StartDatetxt.Text = currentAssignment.StartDate;
+            EndDatetxt.Text = currentAssignment.EndDate;
+            StartAssignmentbttn.Visible = false;
+            AssignmentClientcombox.Visible = false;
+            NameOfClienttxt.Visible = true;    // The client name will be in this textbox
+            EndTaskbttn.Visible = true;
+            Pauseassignmentbttn.Visible = true;
+            AssignmentInfoLbl.Text = "Assignment running";
+        }
+        else
+        {
+            EndTaskbttn.Visible = false;
+            Pauseassignmentbttn.Visible = false;
+            StartAssignmentbttn.Visible = true;
+            AssignmentInfoLbl.Text = "No Assignment";
+        }
     }
 
     private void RefreshWorkerInfo()

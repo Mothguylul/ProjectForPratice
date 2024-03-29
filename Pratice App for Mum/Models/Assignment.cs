@@ -9,7 +9,7 @@
 
     public class Assignment
     {
-        public int WorkersId { get; set; }
+        public int WorkerId { get; set; }
 
         public int Id { get; set; }
 

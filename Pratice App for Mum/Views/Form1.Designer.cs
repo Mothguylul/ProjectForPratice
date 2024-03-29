@@ -45,16 +45,20 @@
             richTextBox1 = new RichTextBox();
             label5 = new Label();
             groupBox2 = new GroupBox();
-            textBox3 = new TextBox();
-            label8 = new Label();
-            textBox2 = new TextBox();
-            label7 = new Label();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            label9 = new Label();
+            AssignmentInfoLbl = new Label();
+            Pauseassignmentbttn = new Button();
+            NameOfClienttxt = new TextBox();
+            EndTaskbttn = new Button();
             groupBox3 = new GroupBox();
+            label9 = new Label();
+            EndDatetxt = new TextBox();
+            label8 = new Label();
+            StartDatetxt = new TextBox();
+            label7 = new Label();
+            NameOfAssignmentWorkertxt = new TextBox();
+            label6 = new Label();
+            AssignmentClientcombox = new ComboBox();
+            StartAssignmentbttn = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -222,93 +226,70 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(AssignmentInfoLbl);
+            groupBox2.Controls.Add(Pauseassignmentbttn);
+            groupBox2.Controls.Add(NameOfClienttxt);
+            groupBox2.Controls.Add(EndTaskbttn);
             groupBox2.Controls.Add(groupBox3);
             groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(EndDatetxt);
             groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(StartDatetxt);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(NameOfAssignmentWorkertxt);
             groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(comboBox1);
-            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(AssignmentClientcombox);
+            groupBox2.Controls.Add(StartAssignmentbttn);
             groupBox2.Location = new Point(432, 470);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(424, 256);
+            groupBox2.Size = new Size(424, 313);
             groupBox2.TabIndex = 85;
             groupBox2.TabStop = false;
             groupBox2.Text = "Assignments";
             // 
-            // textBox3
+            // AssignmentInfoLbl
             // 
-            textBox3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(232, 124);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(186, 33);
-            textBox3.TabIndex = 90;
+            AssignmentInfoLbl.AutoSize = true;
+            AssignmentInfoLbl.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            AssignmentInfoLbl.Location = new Point(10, 31);
+            AssignmentInfoLbl.Name = "AssignmentInfoLbl";
+            AssignmentInfoLbl.Size = new Size(13, 21);
+            AssignmentInfoLbl.TabIndex = 94;
+            AssignmentInfoLbl.Text = ".";
             // 
-            // label8
+            // Pauseassignmentbttn
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(202, 121);
-            label8.Name = "label8";
-            label8.Size = new Size(24, 32);
-            label8.TabIndex = 89;
-            label8.Text = "-";
+            Pauseassignmentbttn.Location = new Point(10, 243);
+            Pauseassignmentbttn.Name = "Pauseassignmentbttn";
+            Pauseassignmentbttn.Size = new Size(202, 42);
+            Pauseassignmentbttn.TabIndex = 93;
+            Pauseassignmentbttn.Text = "Pause Assignment";
+            Pauseassignmentbttn.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // NameOfClienttxt
             // 
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(10, 124);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(186, 33);
-            textBox2.TabIndex = 88;
+            NameOfClienttxt.Location = new Point(297, 202);
+            NameOfClienttxt.Name = "NameOfClienttxt";
+            NameOfClienttxt.Size = new Size(121, 35);
+            NameOfClienttxt.TabIndex = 92;
             // 
-            // label7
+            // EndTaskbttn
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(161, 91);
-            label7.Name = "label7";
-            label7.Size = new Size(110, 21);
-            label7.TabIndex = 87;
-            label7.Text = "Task Timespan";
+            EndTaskbttn.Location = new Point(10, 195);
+            EndTaskbttn.Name = "EndTaskbttn";
+            EndTaskbttn.Size = new Size(202, 42);
+            EndTaskbttn.TabIndex = 92;
+            EndTaskbttn.Text = "End Assignment";
+            EndTaskbttn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // groupBox3
             // 
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(71, 40);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(309, 33);
-            textBox1.TabIndex = 85;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(10, 46);
-            label6.Name = "label6";
-            label6.Size = new Size(55, 21);
-            label6.TabIndex = 85;
-            label6.Text = "Name:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(297, 199);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 38);
-            comboBox1.TabIndex = 86;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(10, 195);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 42);
-            button1.TabIndex = 0;
-            button1.Text = "Start Task";
-            button1.UseVisualStyleBackColor = true;
+            groupBox3.Location = new Point(424, 156);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(200, 100);
+            groupBox3.TabIndex = 86;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Infos";
             // 
             // label9
             // 
@@ -320,14 +301,76 @@
             label9.TabIndex = 91;
             label9.Text = "Client:";
             // 
-            // groupBox3
+            // EndDatetxt
             // 
-            groupBox3.Location = new Point(424, 156);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(200, 100);
-            groupBox3.TabIndex = 86;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Infos";
+            EndDatetxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            EndDatetxt.Location = new Point(232, 124);
+            EndDatetxt.Name = "EndDatetxt";
+            EndDatetxt.Size = new Size(186, 33);
+            EndDatetxt.TabIndex = 90;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(202, 121);
+            label8.Name = "label8";
+            label8.Size = new Size(24, 32);
+            label8.TabIndex = 89;
+            label8.Text = "-";
+            // 
+            // StartDatetxt
+            // 
+            StartDatetxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            StartDatetxt.Location = new Point(10, 124);
+            StartDatetxt.Name = "StartDatetxt";
+            StartDatetxt.Size = new Size(186, 33);
+            StartDatetxt.TabIndex = 88;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(161, 91);
+            label7.Name = "label7";
+            label7.Size = new Size(110, 21);
+            label7.TabIndex = 87;
+            label7.Text = "Task Timespan";
+            // 
+            // NameOfAssignmentWorkertxt
+            // 
+            NameOfAssignmentWorkertxt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            NameOfAssignmentWorkertxt.Location = new Point(71, 55);
+            NameOfAssignmentWorkertxt.Name = "NameOfAssignmentWorkertxt";
+            NameOfAssignmentWorkertxt.Size = new Size(309, 33);
+            NameOfAssignmentWorkertxt.TabIndex = 85;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(10, 61);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 21);
+            label6.TabIndex = 85;
+            label6.Text = "Name:";
+            // 
+            // AssignmentClientcombox
+            // 
+            AssignmentClientcombox.FormattingEnabled = true;
+            AssignmentClientcombox.Location = new Point(297, 199);
+            AssignmentClientcombox.Name = "AssignmentClientcombox";
+            AssignmentClientcombox.Size = new Size(121, 38);
+            AssignmentClientcombox.TabIndex = 86;
+            // 
+            // StartAssignmentbttn
+            // 
+            StartAssignmentbttn.Location = new Point(10, 195);
+            StartAssignmentbttn.Name = "StartAssignmentbttn";
+            StartAssignmentbttn.Size = new Size(135, 42);
+            StartAssignmentbttn.TabIndex = 0;
+            StartAssignmentbttn.Text = "Start Task";
+            StartAssignmentbttn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -371,15 +414,19 @@
         private RichTextBox richTextBox1;
         private Label label5;
         private GroupBox groupBox2;
-        private Button button1;
-        private TextBox textBox3;
+        private Button StartAssignmentbttn;
+        private TextBox EndDatetxt;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox StartDatetxt;
         private Label label7;
-        private TextBox textBox1;
+        private TextBox NameOfAssignmentWorkertxt;
         private Label label6;
-        private ComboBox comboBox1;
+        private ComboBox AssignmentClientcombox;
         private Label label9;
         private GroupBox groupBox3;
+        private TextBox NameOfClienttxt;
+        private Button Pauseassignmentbttn;
+        private Button EndTaskbttn;
+        private Label AssignmentInfoLbl;
     }
 }
