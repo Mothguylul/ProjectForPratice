@@ -110,6 +110,7 @@ public partial class Form1 : Form
         }
         else
         {
+            // Seeting UI
             EndDateLabel.Visible = false;
             StartDateLabel.Visible = false;
             NameLabel.Visible = false;
@@ -174,5 +175,25 @@ public partial class Form1 : Form
     private void CalenderCheckBox_CheckedChanged(object sender, EventArgs e)
     {
         Calender.Visible = CalenderCheckBox.Checked ? true : false;
+    }
+
+    private void StartAssignmentbttn_Click(object sender, EventArgs e)
+    {
+        Worker? selectedWorker = WorkersListBox.SelectedItem as Worker;
+
+        if (selectedWorker is null)
+        {
+            return;
+        }
+
+        Assignment newAssignment = new Assignment();
+
+        newAssignment.WorkerId = selectedWorker.Id;
+        newAssignment.StartDate = StartDatetxt.Text;
+        newAssignment.EndDate = EndDatetxt.Text;
+        newAssignment.Notes = string.Empty;
+        newAssignment.Paused = false;
+
+        repository.CreateAssignment(newAssignment);
     }
 }

@@ -49,6 +49,17 @@ public class Repository : IRepository
         }
     }
 
+    public bool CreateAssignment(Assignment assignment)
+    {
+        using (IDbConnection connection = new SQLiteConnection(connectionString))
+        {
+            string sqlname = $"INSERT Into Assignments (WorkerId,EndDate,StartDate,Notes,Paused) VALUES('{assignment}')";
+            CommandDefinition command = new CommandDefinition(sqlname);
+
+            return connection.Execute(command) > 0;
+        }
+    }
+
     public bool CreateNewTown(string newTown)
     {
         using (IDbConnection connection = new SQLiteConnection(connectionString))

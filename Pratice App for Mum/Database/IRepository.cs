@@ -15,6 +15,8 @@
 
         IEnumerable<Assignment> GetAssignments();
 
+        bool CreateAssignment(Assignment assignment);
+
         bool CreateNewTown(string newTown);
 
         bool DeleteTown(int townId);
