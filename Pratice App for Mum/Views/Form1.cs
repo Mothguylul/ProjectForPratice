@@ -34,6 +34,8 @@ public partial class Form1 : Form
     private void TownComboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
         WorkersListBox.Items.Clear();
+        ResetAssignmentUI();
+        ResetWorkerInfoUI();
 
         if (TownComboBox.SelectedIndex != -1)
         {
@@ -45,16 +47,6 @@ public partial class Form1 : Form
             {
                 WorkersListBox.Items.Add(worker);
             }
-        }
-    }
-
-    private void RefreshTowns(object? sender, EventArgs e)
-    {
-        TownComboBox.Items.Clear();
-
-        foreach (Town town in repository.GetTowns())
-        {
-            TownComboBox.Items.Add(town);
         }
     }
 
@@ -97,25 +89,50 @@ public partial class Form1 : Form
 
         Assignment? currentAssignment = repository.GetAssignments().FirstOrDefault(a => a.WorkerId == selectedWorker.Id);
 
-        NameOfAssignmentWorkertxt.Text = selectedWorker.Name;
-
         if (currentAssignment is not null)
         {
-            StartDatetxt.Text = currentAssignment.StartDate;
-            EndDatetxt.Text = currentAssignment.EndDate;
+            EndDateLabel.Visible = true;
+            StartDateLabel.Visible = true;
+            NameLabel.Visible = true;
+
+            NameOfAssignmentWorkertxt.Visible = false;
+            StartDatetxt.Visible = false;
+            EndDatetxt.Visible = false;
+            StartDateLabel.Text = currentAssignment.StartDate;
+            EndDateLabel.Text = currentAssignment.EndDate;
+            NameLabel.Text = selectedWorker.Name;
             StartAssignmentbttn.Visible = false;
             AssignmentClientcombox.Visible = false;
-            NameOfClienttxt.Visible = true;    // The client name will be in this textbox
+            NameOfClienttxt.Visible = true;
             EndTaskbttn.Visible = true;
             Pauseassignmentbttn.Visible = true;
             AssignmentInfoLbl.Text = "Assignment running";
         }
         else
         {
+            EndDateLabel.Visible = false;
+            StartDateLabel.Visible = false;
+            NameLabel.Visible = false;
+
+            NameOfAssignmentWorkertxt.Visible = true;
+            StartDatetxt.Visible = true;
+            EndDatetxt.Visible = true;
+
+            NameOfAssignmentWorkertxt.Text = selectedWorker.Name;
             EndTaskbttn.Visible = false;
             Pauseassignmentbttn.Visible = false;
             StartAssignmentbttn.Visible = true;
             AssignmentInfoLbl.Text = "No Assignment";
+        }
+    }
+
+    private void RefreshTowns(object? sender, EventArgs e)
+    {
+        TownComboBox.Items.Clear();
+
+        foreach (Town town in repository.GetTowns())
+        {
+            TownComboBox.Items.Add(town);
         }
     }
 
@@ -129,7 +146,33 @@ public partial class Form1 : Form
         BirthDateTextBox.Text = selectedWorker is null ? string.Empty : selectedWorker.BirthDate;
     }
 
-    private void NameTextBox_TextChanged(object sender, EventArgs e)
+    // Reset UI
+    private void ResetAssignmentUI()
     {
+        NameOfAssignmentWorkertxt.Clear();
+        StartDatetxt.Clear();
+        EndDatetxt.Clear();
+
+        NameOfAssignmentWorkertxt.Visible = true;
+        StartDatetxt.Visible = true;
+        EndDatetxt.Visible = true;
+
+        NameLabel.Visible = false;
+        StartDateLabel.Visible = false;
+        EndDateLabel.Visible = false;
+    }
+
+    private void ResetWorkerInfoUI()
+    {
+        NameTextBox.Clear();
+        EmailTextBox.Clear();
+        MobilTextBox.Clear();
+        BirthDateTextBox.Clear();
+        WorkerNotestxt.Clear();
+    }
+
+    private void CalenderCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        Calender.Visible = CalenderCheckBox.Checked ? true : false;
     }
 }

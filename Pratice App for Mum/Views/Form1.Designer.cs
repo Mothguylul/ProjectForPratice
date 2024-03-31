@@ -42,9 +42,12 @@
             CreateTownNutton = new Button();
             DeleteTownButton = new Button();
             groupBox1 = new GroupBox();
-            richTextBox1 = new RichTextBox();
+            WorkerNotestxt = new RichTextBox();
             label5 = new Label();
             groupBox2 = new GroupBox();
+            StartDateLabel = new Label();
+            EndDateLabel = new Label();
+            NameLabel = new Label();
             AssignmentInfoLbl = new Label();
             Pauseassignmentbttn = new Button();
             NameOfClienttxt = new TextBox();
@@ -59,6 +62,8 @@
             label6 = new Label();
             AssignmentClientcombox = new ComboBox();
             StartAssignmentbttn = new Button();
+            Calender = new MonthCalendar();
+            CalenderCheckBox = new CheckBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -109,7 +114,6 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(309, 33);
             NameTextBox.TabIndex = 75;
-            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // label2
             // 
@@ -189,7 +193,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(richTextBox1);
+            groupBox1.Controls.Add(WorkerNotestxt);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(NameTextBox);
             groupBox1.Controls.Add(EmailTextBox);
@@ -206,13 +210,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Worker Info";
             // 
-            // richTextBox1
+            // WorkerNotestxt
             // 
-            richTextBox1.Location = new Point(92, 237);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(309, 85);
-            richTextBox1.TabIndex = 84;
-            richTextBox1.Text = "";
+            WorkerNotestxt.Location = new Point(92, 237);
+            WorkerNotestxt.Name = "WorkerNotestxt";
+            WorkerNotestxt.Size = new Size(309, 85);
+            WorkerNotestxt.TabIndex = 84;
+            WorkerNotestxt.Text = "";
             // 
             // label5
             // 
@@ -226,6 +230,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(StartDateLabel);
+            groupBox2.Controls.Add(EndDateLabel);
+            groupBox2.Controls.Add(NameLabel);
             groupBox2.Controls.Add(AssignmentInfoLbl);
             groupBox2.Controls.Add(Pauseassignmentbttn);
             groupBox2.Controls.Add(NameOfClienttxt);
@@ -240,12 +247,45 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(AssignmentClientcombox);
             groupBox2.Controls.Add(StartAssignmentbttn);
-            groupBox2.Location = new Point(432, 470);
+            groupBox2.Location = new Point(432, 450);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(424, 313);
             groupBox2.TabIndex = 85;
             groupBox2.TabStop = false;
             groupBox2.Text = "Assignments";
+            // 
+            // StartDateLabel
+            // 
+            StartDateLabel.AutoSize = true;
+            StartDateLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            StartDateLabel.Location = new Point(92, 128);
+            StartDateLabel.Name = "StartDateLabel";
+            StartDateLabel.Size = new Size(73, 25);
+            StartDateLabel.TabIndex = 97;
+            StartDateLabel.Text = "label10";
+            StartDateLabel.Visible = false;
+            // 
+            // EndDateLabel
+            // 
+            EndDateLabel.AutoSize = true;
+            EndDateLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            EndDateLabel.Location = new Point(256, 128);
+            EndDateLabel.Name = "EndDateLabel";
+            EndDateLabel.Size = new Size(73, 25);
+            EndDateLabel.TabIndex = 96;
+            EndDateLabel.Text = "label10";
+            EndDateLabel.Visible = false;
+            // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            NameLabel.Location = new Point(71, 62);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(73, 25);
+            NameLabel.TabIndex = 95;
+            NameLabel.Text = "label10";
+            NameLabel.Visible = false;
             // 
             // AssignmentInfoLbl
             // 
@@ -372,11 +412,31 @@
             StartAssignmentbttn.Text = "Start Task";
             StartAssignmentbttn.UseVisualStyleBackColor = true;
             // 
+            // Calender
+            // 
+            Calender.Location = new Point(981, 143);
+            Calender.Name = "Calender";
+            Calender.TabIndex = 98;
+            Calender.Visible = false;
+            // 
+            // CalenderCheckBox
+            // 
+            CalenderCheckBox.AutoSize = true;
+            CalenderCheckBox.Location = new Point(874, 108);
+            CalenderCheckBox.Name = "CalenderCheckBox";
+            CalenderCheckBox.Size = new Size(114, 34);
+            CalenderCheckBox.TabIndex = 99;
+            CalenderCheckBox.Text = "Calender";
+            CalenderCheckBox.UseVisualStyleBackColor = true;
+            CalenderCheckBox.CheckedChanged += CalenderCheckBox_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1422, 961);
+            Controls.Add(CalenderCheckBox);
+            Controls.Add(Calender);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(DeleteTownButton);
@@ -411,7 +471,7 @@
         private Button CreateTownNutton;
         private Button DeleteTownButton;
         private GroupBox groupBox1;
-        private RichTextBox richTextBox1;
+        private RichTextBox WorkerNotestxt;
         private Label label5;
         private GroupBox groupBox2;
         private Button StartAssignmentbttn;
@@ -428,5 +488,10 @@
         private Button Pauseassignmentbttn;
         private Button EndTaskbttn;
         private Label AssignmentInfoLbl;
+        private Label StartDateLabel;
+        private Label EndDateLabel;
+        private Label NameLabel;
+        private MonthCalendar Calender;
+        private CheckBox CalenderCheckBox;
     }
 }
