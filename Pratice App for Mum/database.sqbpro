@@ -7,5 +7,5 @@ INSERT INTO Workers (Name, Id, TownId, Email, Birthdate, Notes, Mobil)
 VALUES ('Felix', '4', '2', 'Felix89@gmail.com', '05.09.1976', '', '2453421');
 INSERT INTO Workers (Name, Id, TownId, Email, Birthdate, Notes, Mobil)
 VALUES ('Leo', '5', '3', 'Leo89@gmail.com', '05.09.1983', '', '245999345');
-UPDATE Assignments SET StartDate = '03/30/24', EndDate = '04/15/24' WHERE Id=1
+UPDATE Assignments SET StartDate = '03/30/24', EndDate = '04/15/24' WHERE Id=1
 </sql><current_tab id="0"/></tab_sql></sqlb_project>

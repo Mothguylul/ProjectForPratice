@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,7 @@ public class Repository : IRepository
     {
         using (IDbConnection connection = new SQLiteConnection(connectionString))
         {
-            string sqlname = $"INSERT Into Assignments (WorkerId,EndDate,StartDate,Notes,Paused) VALUES('{assignment}')";
+            string sqlname = $"INSERT Into Assignments (WorkerId,EndDate,StartDate,Notes,Paused) VALUES('{assignment.WorkerId}', '{assignment.EndDate}', '{assignment.StartDate}', '{assignment.Notes}', '{assignment.Paused}')";
             CommandDefinition command = new CommandDefinition(sqlname);
 
             return connection.Execute(command) > 0;
