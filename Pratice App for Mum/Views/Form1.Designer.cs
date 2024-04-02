@@ -47,9 +47,9 @@
             Calender = new MonthCalendar();
             CalenderCheckBox = new CheckBox();
             groupBox2 = new GroupBox();
+            assignmentViewerUI = new Views.AssignmentViewer();
             Createbttn = new Button();
             assignmentViewer1 = new Views.AssignmentViewer();
-            assignmentViewer2 = new Views.AssignmentViewer();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -234,7 +234,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(assignmentViewer2);
+            groupBox2.Controls.Add(assignmentViewerUI);
             groupBox2.Controls.Add(Createbttn);
             groupBox2.Controls.Add(assignmentViewer1);
             groupBox2.Location = new Point(432, 471);
@@ -243,6 +243,15 @@
             groupBox2.TabIndex = 100;
             groupBox2.TabStop = false;
             groupBox2.Text = "Assignment";
+            // 
+            // assignmentViewerUI
+            // 
+            assignmentViewerUI.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            assignmentViewerUI.Location = new Point(17, 31);
+            assignmentViewerUI.Margin = new Padding(0, 0, 100, 1);
+            assignmentViewerUI.Name = "assignmentViewerUI";
+            assignmentViewerUI.Size = new Size(407, 253);
+            assignmentViewerUI.TabIndex = 3;
             // 
             // Createbttn
             // 
@@ -256,20 +265,12 @@
             // 
             // assignmentViewer1
             // 
+            assignmentViewer1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             assignmentViewer1.Location = new Point(-641, -164);
             assignmentViewer1.Margin = new Padding(5, 6, 5, 4);
             assignmentViewer1.Name = "assignmentViewer1";
             assignmentViewer1.Size = new Size(99, 618);
             assignmentViewer1.TabIndex = 0;
-            // 
-            // assignmentViewer2
-            // 
-            assignmentViewer2.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            assignmentViewer2.Location = new Point(13, 28);
-            assignmentViewer2.Margin = new Padding(0);
-            assignmentViewer2.Name = "assignmentViewer2";
-            assignmentViewer2.Size = new Size(411, 257);
-            assignmentViewer2.TabIndex = 3;
             // 
             // Form1
             // 
@@ -318,6 +319,6 @@
         private GroupBox groupBox2;
         private Views.AssignmentViewer assignmentViewer1;
         private Button Createbttn;
-        private Views.AssignmentViewer assignmentViewer2;
+        private Views.AssignmentViewer assignmentViewerUI;
     }
 }

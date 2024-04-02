@@ -16,6 +16,14 @@ public partial class Form1 : Form
         RefreshTowns(this, EventArgs.Empty);
     }
 
+    public ListBox WorkerBox => WorkersListBox;
+
+    private void WorkersListBox_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        RefreshWorkerInfo();
+        RefreshAssignmentInfo(sender, e);
+    }
+
     private void RefreshTowns(object? sender, EventArgs e)
     {
         TownComboBox.Items.Clear();
@@ -64,12 +72,6 @@ public partial class Form1 : Form
         }
     }
 
-    private void WorkersListBox_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        RefreshWorkerInfo();
-        RefreshAssignmentInfo(sender, e);
-    }
-
     private void RefreshWorkerInfo()
     {
         Worker? selectedWorker = WorkersListBox.SelectedItem as Worker;
@@ -91,17 +93,15 @@ public partial class Form1 : Form
 
         Assignment? currentAssignment = DataAccess.Repository.GetAssignments().FirstOrDefault(a => a.WorkerId == selectedWorker.Id);
 
-        AssignmentViewer assignmentViewer = new AssignmentViewer();
-
         if (currentAssignment is not null)
         {
-            assignmentViewer.SetAssignmentInfoUI(currentAssignment);
-            assignmentViewer.Visible = true;
+            assignmentViewerUI.SetAssignmentInfoUI(currentAssignment);
+            assignmentViewerUI.Visible = true;
             Createbttn.Visible = false;
         }
         else
         {
-            assignmentViewer.Visible = false;
+            assignmentViewerUI.Visible = false;
             Createbttn.Visible = true;
         }
     }

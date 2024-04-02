@@ -17,6 +17,8 @@
 
         bool CreateAssignment(Assignment assignment);
 
+        bool DeleteAssignment(int workersId);
+
         bool CreateNewTown(string newTown);
 
         bool DeleteTown(int townId);

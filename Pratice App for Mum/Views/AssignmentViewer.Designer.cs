@@ -38,6 +38,7 @@
             label5 = new Label();
             label2 = new Label();
             label3 = new Label();
+            DeleteAssignmentbttn = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             AssignmentPaused.AutoSize = true;
             AssignmentPaused.Font = new Font("Segoe UI", 11.25F, FontStyle.Italic, GraphicsUnit.Point);
-            AssignmentPaused.Location = new Point(168, 73);
+            AssignmentPaused.Location = new Point(177, 123);
             AssignmentPaused.Name = "AssignmentPaused";
             AssignmentPaused.Size = new Size(152, 24);
             AssignmentPaused.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             StartDateLabel.AutoSize = true;
             StartDateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            StartDateLabel.Location = new Point(53, 42);
+            StartDateLabel.Location = new Point(54, 60);
             StartDateLabel.Name = "StartDateLabel";
             StartDateLabel.Size = new Size(70, 20);
             StartDateLabel.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             EnddateLabel.AutoSize = true;
             EnddateLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            EnddateLabel.Location = new Point(54, 63);
+            EnddateLabel.Location = new Point(54, 92);
             EnddateLabel.Name = "EnddateLabel";
             EnddateLabel.Size = new Size(64, 20);
             EnddateLabel.TabIndex = 2;
@@ -85,7 +86,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(9, 83);
+            label1.Location = new Point(11, 127);
             label1.Name = "label1";
             label1.Size = new Size(55, 20);
             label1.TabIndex = 6;
@@ -95,7 +96,7 @@
             // 
             panel1.BackColor = SystemColors.ScrollBar;
             panel1.Controls.Add(NotesAssignmentsLabel);
-            panel1.Location = new Point(9, 103);
+            panel1.Location = new Point(11, 150);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
             panel1.Size = new Size(311, 41);
@@ -125,7 +126,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(9, 63);
+            label2.Location = new Point(11, 92);
             label2.Name = "label2";
             label2.Size = new Size(37, 20);
             label2.TabIndex = 11;
@@ -135,16 +136,28 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(9, 42);
+            label3.Location = new Point(9, 60);
             label3.Name = "label3";
             label3.Size = new Size(43, 20);
             label3.TabIndex = 12;
             label3.Text = "Start:";
             // 
+            // DeleteAssignmentbttn
+            // 
+            DeleteAssignmentbttn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteAssignmentbttn.Location = new Point(177, 205);
+            DeleteAssignmentbttn.Name = "DeleteAssignmentbttn";
+            DeleteAssignmentbttn.Size = new Size(162, 36);
+            DeleteAssignmentbttn.TabIndex = 13;
+            DeleteAssignmentbttn.Text = "Delete Assignment";
+            DeleteAssignmentbttn.UseVisualStyleBackColor = true;
+            DeleteAssignmentbttn.Click += DeleteAssignmentbttn_Click;
+            // 
             // AssignmentViewer
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(DeleteAssignmentbttn);
             Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -157,7 +170,7 @@
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(0);
             Name = "AssignmentViewer";
-            Size = new Size(333, 156);
+            Size = new Size(342, 244);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -176,5 +189,6 @@
         private Label label5;
         private Label label2;
         private Label label3;
+        private Button DeleteAssignmentbttn;
     }
 }

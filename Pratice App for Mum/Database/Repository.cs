@@ -61,6 +61,17 @@ public class Repository : IRepository
         }
     }
 
+    public bool DeleteAssignment(int workesId)
+    {
+        using (IDbConnection connection = new SQLiteConnection(connectionString))
+        {
+            string sqlname = $"DELETE FROM Assignments WHERE Id = '{workesId}'";
+            CommandDefinition command = new CommandDefinition(sqlname);
+
+            return connection.Execute(command) > 0;
+        }
+    }
+
     public bool CreateNewTown(string newTown)
     {
         using (IDbConnection connection = new SQLiteConnection(connectionString))
