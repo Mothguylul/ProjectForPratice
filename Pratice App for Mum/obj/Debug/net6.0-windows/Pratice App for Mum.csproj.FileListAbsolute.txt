@@ -35,4 +35,4 @@ C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\ne
 C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice_App_for_Mum.CreateTown.resources
 C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice_App_for_Mum.LoginForm.resources
 C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice_App_for_Mum.Views.AssignmentViewer.resources
-C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice_App_for_Mum.Views.NewAssignmentViewer.resources
+C:\Users\Admin\source\repos\Pratice App for Mum\Pratice App for Mum\obj\Debug\net6.0-windows\Pratice_App_for_Mum.Views.CreateAssignment.resources

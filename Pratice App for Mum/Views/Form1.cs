@@ -5,16 +5,14 @@ using System.Windows.Forms;
 using System.Linq;
 using Pratice_App_for_Mum.Database;
 using Pratice_App_for_Mum.Models;
+using Pratice_App_for_Mum.Views;
 
 public partial class Form1 : Form
 {
-    private IRepository repository;
-
     public Form1()
     {
         InitializeComponent();
 
-        repository = new Repository();
         RefreshTowns(this, EventArgs.Empty);
     }
 
@@ -22,7 +20,7 @@ public partial class Form1 : Form
     {
         TownComboBox.Items.Clear();
 
-        foreach (Town town in repository.GetTowns())
+        foreach (Town town in DataAccess.Repository.GetTowns())
         {
             TownComboBox.Items.Add(town);
         }
@@ -46,7 +44,7 @@ public partial class Form1 : Form
             return;
         }
 
-        repository.DeleteTown(selectedTown.Id);
+        DataAccess.Repository.DeleteTown(selectedTown.Id);
         TownComboBox.Items.Remove(selectedTown);
     }
 
@@ -59,7 +57,7 @@ public partial class Form1 : Form
 
         if (selectedTown is not null)
         {
-            foreach (Worker worker in repository.GetWorkers().Where(w => w.TownId == selectedTown.Id))
+            foreach (Worker worker in DataAccess.Repository.GetWorkers().Where(w => w.TownId == selectedTown.Id))
             {
                 WorkersListBox.Items.Add(worker);
             }
@@ -69,7 +67,7 @@ public partial class Form1 : Form
     private void WorkersListBox_SelectedIndexChanged(object sender, EventArgs e)
     {
         RefreshWorkerInfo();
-        RefreshAssignmentInfo();
+        RefreshAssignmentInfo(sender, e);
     }
 
     private void RefreshWorkerInfo()
@@ -82,7 +80,7 @@ public partial class Form1 : Form
         BirthDateTextBox.Text = selectedWorker is null ? string.Empty : selectedWorker.BirthDate;
     }
 
-    private void RefreshAssignmentInfo()
+    private void RefreshAssignmentInfo(object? sender, EventArgs e)
     {
         Worker? selectedWorker = WorkersListBox.SelectedItem as Worker;
 
@@ -91,16 +89,28 @@ public partial class Form1 : Form
             return;
         }
 
-        Assignment? currentAssignment = repository.GetAssignments().FirstOrDefault(a => a.WorkerId == selectedWorker.Id);
+        Assignment? currentAssignment = DataAccess.Repository.GetAssignments().FirstOrDefault(a => a.WorkerId == selectedWorker.Id);
+
+        AssignmentViewer assignmentViewer = new AssignmentViewer();
 
         if (currentAssignment is not null)
         {
-            // show the assignment viewer
+            assignmentViewer.SetAssignmentInfoUI(currentAssignment);
+            assignmentViewer.Visible = true;
+            Createbttn.Visible = false;
         }
         else
         {
-            // show the assignment creator
+            assignmentViewer.Visible = false;
+            Createbttn.Visible = true;
         }
+    }
+
+    private void Createbttn_Click(object sender, EventArgs e)
+    {
+        CreateAssignment createAssignment = new CreateAssignment((Worker)WorkersListBox.SelectedItem);
+        createAssignment.FormClosed += RefreshAssignmentInfo;
+        createAssignment.Show();
     }
 
     private void CalenderCheckBox_CheckedChanged(object sender, EventArgs e)
