@@ -250,7 +250,7 @@
             assignmentViewerUI.Location = new Point(17, 31);
             assignmentViewerUI.Margin = new Padding(0, 0, 100, 1);
             assignmentViewerUI.Name = "assignmentViewerUI";
-            assignmentViewerUI.Size = new Size(407, 253);
+            assignmentViewerUI.Size = new Size(393, 253);
             assignmentViewerUI.TabIndex = 3;
             // 
             // Createbttn

@@ -22,5 +22,7 @@
         bool CreateNewTown(string newTown);
 
         bool DeleteTown(int townId);
+
+        bool TogglePause(Assignment assignment);
     }
 }

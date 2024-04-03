@@ -14,9 +14,9 @@ public partial class Form1 : Form
         InitializeComponent();
 
         RefreshTowns(this, EventArgs.Empty);
-    }
 
-    public ListBox WorkerBox => WorkersListBox;
+        assignmentViewerUI.DeleteButtonClicked += RefreshAssignmentInfo;
+    }
 
     private void WorkersListBox_SelectedIndexChanged(object sender, EventArgs e)
     {

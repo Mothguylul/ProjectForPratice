@@ -14,13 +14,14 @@
 
     public partial class AssignmentViewer : UserControl
     {
-        private Form1 form1;
+        private Assignment? currentAssignment;
 
         public AssignmentViewer()
         {
             InitializeComponent();
-            form1 = new Form1();
         }
+
+        public event EventHandler? DeleteButtonClicked;
 
         public void SetAssignmentInfoUI(Assignment assignment)
         {
@@ -28,22 +29,24 @@
             StartDateLabel.Text = assignment.StartDate;
             NotesAssignmentsLabel.Text = assignment.Notes;
             AssignmentPaused.Checked = assignment.Paused;
+
+            currentAssignment = assignment;
         }
 
         private void DeleteAssignmentbttn_Click(object sender, EventArgs e)
         {
-            Worker? selectedWorker = form1.WorkerBox.SelectedItem as Worker;
-
-            Assignment assignmentToDelete = (Assignment)DataAccess.Repository.GetWorkers().Where(assignment => assignment.Id == selectedWorker?.Id);
-
-            if (assignmentToDelete != null)
+            if (currentAssignment != null)
             {
-                DataAccess.Repository.DeleteAssignment(assignmentToDelete.Id);
-                MessageBox.Show("Assignment deleted!");
+                DataAccess.Repository.DeleteAssignment(currentAssignment.Id);
+                DeleteButtonClicked?.Invoke(this, EventArgs.Empty);
             }
-            else
+        }
+
+        private void AssignmentPaused_CheckedChanged(object sender, EventArgs e)
+        {
+            if (currentAssignment is not null)
             {
-                MessageBox.Show("Failed to find Assignment");
+                DataAccess.Repository.TogglePause(currentAssignment);
             }
         }
     }

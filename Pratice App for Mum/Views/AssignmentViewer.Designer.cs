@@ -52,6 +52,7 @@
             AssignmentPaused.TabIndex = 0;
             AssignmentPaused.Text = "Assignment Paused";
             AssignmentPaused.UseVisualStyleBackColor = true;
+            AssignmentPaused.CheckedChanged += AssignmentPaused_CheckedChanged;
             // 
             // StartDateLabel
             // 

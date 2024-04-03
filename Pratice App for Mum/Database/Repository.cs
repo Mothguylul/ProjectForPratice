@@ -72,6 +72,17 @@ public class Repository : IRepository
         }
     }
 
+    public bool TogglePause(Assignment assignment)
+    {
+        using (IDbConnection connection = new SQLiteConnection(connectionString))
+        {
+            string sqlname = $"UPDATE Assignments SET Paused = '{!assignment.Paused}' WHERE Id = {assignment.Id}";
+            CommandDefinition command = new CommandDefinition(sqlname);
+
+            return connection.Execute(command) > 0;
+        }
+    }
+
     public bool CreateNewTown(string newTown)
     {
         using (IDbConnection connection = new SQLiteConnection(connectionString))
